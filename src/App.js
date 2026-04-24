@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import HelloWorld from "./HelloWorld";
+import Counter from "./Counter";
+import FilteredList from "./FilteredList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const produce = [
+  { name: "Apple", type: "Fruit" },
+  { name: "Pineapple", type: "Fruit" },
+  { name: "Banana", type: "Fruit" },
+  { name: "Pear", type: "Fruit" },
+  { name: "Strawberry", type: "Fruit" },
+  { name: "Orange", type: "Fruit" },
+  { name: "Lettuce", type: "Vegetables" },
+  { name: "Cucumber", type: "Vegetables" },
+  { name: "Eggplant", type: "Vegetables" },
+  { name: "Squash", type: "Vegetables" },
+  { name: "Bell pepper", type: "Vegetables" },
+  { name: "Onion", type: "Vegetables" },
+];
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <HelloWorld />
+        <hr />
+        <Counter />
+        <hr />
+        <FilteredList items={produce} />
+      </div>
+    );
+  }
 }
 
 export default App;
